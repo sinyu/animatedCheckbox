@@ -56,7 +56,7 @@ jQuery.fn.animatedCheckBox = function(options) {
 	var label_id = this.attr('id')+'_label';
 	
 	var css = "/*fontawesome iconfont*/\n"+
-				"@import url(http://thecodeplayer.com/uploads/fonts/fontawesome/css/font-awesome.min.css);\n"+
+				"@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);\n"+
 				"* {margin: 0; padding: 0;}\n"+
 				"/*Adding custom checkbox icons*/\n"+
 				".animated_checkbox_label {\n	position: relative;	cursor: pointer;}\n"+
@@ -79,7 +79,7 @@ jQuery.fn.animatedCheckBox = function(options) {
 						"#"+label_id+":before, #"+label_id+":after {font-family: FontAwesome;	font-size: "+checkBox_size+";}\n"+
 						"#"+label_id+":after {font-family: FontAwesome;	font-size: "+checkBox_size+"; /*checked icon will be hidden by default by using 0 max-width and overflow hidden*/	max-width: 0;	overflow: hidden;	opacity: 0.5;	/*CSS3 transitions for animated effect*/	transition: all "+transitionTime+"}\n"+
 						"#"+checkbox_id+" {	display: none;}\n"+
-						"#"+checkbox_id+":checked  + .animated_checkbox_label:after {\n max-width: 25px; /*an arbitratry number more than the icon's width*/	opacity: 1; /*for fade in effect*/}\n"+checkboxColor;	
+						"#"+checkbox_id+":checked  + .animated_checkbox_label:after {\n max-width: "+padding_size+"; /*an arbitratry number more than the icon's width*/	opacity: 1; /*for fade in effect*/}\n"+checkboxColor;	
 	
 	$('head').append('<style>'+specific_css+'</style>');
 		var label_text = '<input type="checkbox" name="'+checkbox_id+'" id="'+checkbox_id+'" /><label id="'+label_id+'" class ="animated_checkbox_label" for="'+checkbox_id+'">'+options.checkBoxText+'</label>';	
